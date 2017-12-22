@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RJBadgeKit_Example' do
+  pod 'RJBadgeKit', :path => '../'
+
+  target 'RJBadgeKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
