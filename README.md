@@ -20,9 +20,11 @@ it, simply add the following line to your Podfile:
 pod 'RJBadgeKit'
 ```
 
+![image](https://github.com/RylanJIN/RJBadgeKit/blob/master/Example/demo.gif)
+
 ## Author
 
-RylanJIN, xiaojun.jin@outlook.com
+Ryan Jin, xiaojun.jin@outlook.com
 
 ## License
 
