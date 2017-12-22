@@ -41,24 +41,24 @@ NSString * const DEMO_CHILD_PATH2 = @"root.p365.test2";
     [self.badgeController observePath:DEMO_PARENT_PATH
                             badgeView:self.parentButton
                                 block:^(id observer, NSDictionary *info) {
-                                    NSLog(@"root.p365 => %@", info);
-                                }];
+        NSLog(@"root.p365 => %@", info);
+    }];
     
     // observe child button 'root.p365.test1'
     [self.badgeController observePath:DEMO_CHILD_PATH1
                             badgeView:self.childButton1
                                 block:^(RJViewController *observer, NSDictionary *info) {
-                                    NSUInteger count = [info[RJBadgeCountKey] unsignedIntegerValue];
-                                    [observer.countLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)count]];
-                                }];
+        NSUInteger count = [info[RJBadgeCountKey] unsignedIntegerValue];
+        [observer.countLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)count]];
+    }];
     
-    NSUInteger count = [self.badgeController countForKeyPath:DEMO_CHILD_PATH1];
+    NSUInteger count = [RJBadgeController countForKeyPath:DEMO_CHILD_PATH1];
     [self.countLabel setText:[@(count) stringValue]];
     
     /**
      DEBUG FOR PARENT BADGE COUNTING
      */
-    [self.badgeController setBadgeForKeyPath:DEMO_CHILD_PATH2 count:2];
+    [RJBadgeController setBadgeForKeyPath:DEMO_CHILD_PATH2 count:2];
     
     // observe child button 'root.p365.test2'
     [self.badgeController observePath:DEMO_CHILD_PATH2 badgeView:self.childButton2 block:nil];
@@ -71,35 +71,35 @@ NSString * const DEMO_CHILD_PATH2 = @"root.p365.test2";
     
     if (!self.countField.text) return;
     
-    [self.badgeController setBadgeForKeyPath:DEMO_CHILD_PATH1
-                                       count:[self.countField.text integerValue]];
+    [RJBadgeController setBadgeForKeyPath:DEMO_CHILD_PATH1
+                                    count:[self.countField.text integerValue]];
 }
 
 - (IBAction)setBadgePath:(UIButton *)sender {
-    [self.badgeController setBadgeForKeyPath:DEMO_CHILD_PATH1];
+    [RJBadgeController setBadgeForKeyPath:DEMO_CHILD_PATH1];
 }
 
 - (IBAction)clearBadgePath:(UIButton *)sender {
-    [self.badgeController clearBadgeForKeyPath:DEMO_CHILD_PATH1];
+    [RJBadgeController clearBadgeForKeyPath:DEMO_CHILD_PATH1];
 }
 
 - (IBAction)clickChildButton1:(UIButton *)sender
 {
-    BOOL needShow = [self.badgeController statusForKeyPath:DEMO_CHILD_PATH1];
+    BOOL needShow = [RJBadgeController statusForKeyPath:DEMO_CHILD_PATH1];
     if (needShow) {
-        [self.badgeController clearBadgeForKeyPath:DEMO_CHILD_PATH1];
+        [RJBadgeController clearBadgeForKeyPath:DEMO_CHILD_PATH1];
     } else {
-        [self.badgeController setBadgeForKeyPath:DEMO_CHILD_PATH1];
+        [RJBadgeController setBadgeForKeyPath:DEMO_CHILD_PATH1];
     }
 }
 
 - (IBAction)clickChildButton2:(id)sender
 {
-    BOOL needShow = [self.badgeController statusForKeyPath:DEMO_CHILD_PATH2];
+    BOOL needShow = [RJBadgeController statusForKeyPath:DEMO_CHILD_PATH2];
     if (needShow) {
-        [self.badgeController clearBadgeForKeyPath:DEMO_CHILD_PATH2];
+        [RJBadgeController clearBadgeForKeyPath:DEMO_CHILD_PATH2];
     } else {
-        [self.badgeController setBadgeForKeyPath:DEMO_CHILD_PATH2 count:2];
+        [RJBadgeController setBadgeForKeyPath:DEMO_CHILD_PATH2 count:2];
     }
 }
 

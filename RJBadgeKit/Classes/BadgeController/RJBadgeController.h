@@ -68,17 +68,15 @@ typedef void (^RJBadgeNotificationBlock)(id _Nullable observer, NSDictionary<NSS
 
 #pragma mark - Operation
 
-- (void)setBadgeForKeyPath:(NSString *)keyPath;
-- (void)setBadgeForKeyPath:(NSString *)keyPath count:(NSUInteger)count;
++ (void)setBadgeForKeyPath:(NSString *)keyPath;
++ (void)setBadgeForKeyPath:(NSString *)keyPath count:(NSUInteger)count;
 
-- (void)clearBadgeForKeyPath:(NSString *)keyPath;
-- (void)clearBadgeForKeyPath:(NSString *)keyPath forced:(BOOL)forced;
++ (void)clearBadgeForKeyPath:(NSString *)keyPath;
++ (void)clearBadgeForKeyPath:(NSString *)keyPath forced:(BOOL)forced;
 
-- (BOOL)statusForKeyPath:(NSString *)keyPath;
++ (BOOL)statusForKeyPath:(NSString *)keyPath;
 
-- (NSUInteger)countForKeyPath:(NSString *)keyPath;
-
-- (nullable id<RJBadge>)badgeForKeyPath:(NSString *)keyPath;
++ (NSUInteger)countForKeyPath:(NSString *)keyPath;
 
 @end
 

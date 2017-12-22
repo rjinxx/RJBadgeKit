@@ -52,8 +52,6 @@ extern NSString * const RJBadgeNameKey;
 
 - (NSUInteger)countForKeyPath:(NSString *)keyPath;
 
-- (id<RJBadge>)badgeForKeyPath:(NSString *)keyPath;
-
 @end
 
 NS_ASSUME_NONNULL_END

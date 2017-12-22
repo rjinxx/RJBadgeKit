@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view.
     NSString *demoPath = @"root.pbdemo.page";
     
-    [self.badgeController setBadgeForKeyPath:demoPath];
+    [RJBadgeController setBadgeForKeyPath:demoPath];
     
     [self.badgeController observePath:demoPath badgeView:self.pageButton block:nil];
 }

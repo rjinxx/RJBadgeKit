@@ -178,50 +178,43 @@
 
 #pragma mark - Operation
 
-- (void)setBadgeForKeyPath:(NSString *)keyPath
++ (void)setBadgeForKeyPath:(NSString *)keyPath
 {
     if (![keyPath length]) return;
     
     [[RJBadgeManager sharedManager] setBadgeForKeyPath:keyPath];
 }
 
-- (void)setBadgeForKeyPath:(NSString *)keyPath count:(NSUInteger)count
++ (void)setBadgeForKeyPath:(NSString *)keyPath count:(NSUInteger)count
 {
     if (![keyPath length]) return;
     
     [[RJBadgeManager sharedManager] setBadgeForKeyPath:keyPath count:count];
 }
 
-- (void)clearBadgeForKeyPath:(NSString *)keyPath {
++ (void)clearBadgeForKeyPath:(NSString *)keyPath {
     [self clearBadgeForKeyPath:keyPath forced:NO];
 }
 
-- (void)clearBadgeForKeyPath:(NSString *)keyPath forced:(BOOL)forced
++ (void)clearBadgeForKeyPath:(NSString *)keyPath forced:(BOOL)forced
 {
     if (![keyPath length]) return;
     
     [[RJBadgeManager sharedManager] clearBadgeForKeyPath:keyPath forced:forced];
 }
 
-- (BOOL)statusForKeyPath:(NSString *)keyPath
++ (BOOL)statusForKeyPath:(NSString *)keyPath
 {
     if (![keyPath length]) return NO;
     
     return [[RJBadgeManager sharedManager] statusForKeyPath:keyPath];
 }
 
-- (NSUInteger)countForKeyPath:(NSString *)keyPath
++ (NSUInteger)countForKeyPath:(NSString *)keyPath
 {
     if (![keyPath length]) return 0;
     
     return [[RJBadgeManager sharedManager] countForKeyPath:keyPath];
-}
-
-- (nullable id<RJBadge>)badgeForKeyPath:(NSString *)keyPath
-{
-    if (![keyPath length]) return nil;
-
-    return [[RJBadgeManager sharedManager] badgeForKeyPath:keyPath];
 }
 
 @end

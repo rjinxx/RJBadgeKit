@@ -25,8 +25,8 @@ NSString * const RJItemPath2 = @"root.pbdemo.page.item2";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.badgeController setBadgeForKeyPath:RJItemPath1];
-    [self.badgeController setBadgeForKeyPath:RJItemPath2];
+    [RJBadgeController setBadgeForKeyPath:RJItemPath1];
+    [RJBadgeController setBadgeForKeyPath:RJItemPath2];
     
     [self.badgeController observePath:RJItemPath1 badgeView:self.item1 block:nil];
     [self.badgeController observePath:RJItemPath2 badgeView:self.item2 block:nil];
@@ -36,21 +36,21 @@ NSString * const RJItemPath2 = @"root.pbdemo.page.item2";
 
 - (IBAction)clickItem1:(UIButton *)sender
 {
-    BOOL needShow = [self.badgeController statusForKeyPath:RJItemPath1];
+    BOOL needShow = [RJBadgeController statusForKeyPath:RJItemPath1];
     if (needShow) {
-        [self.badgeController clearBadgeForKeyPath:RJItemPath1];
+        [RJBadgeController clearBadgeForKeyPath:RJItemPath1];
     } else {
-        [self.badgeController setBadgeForKeyPath:RJItemPath1];
+        [RJBadgeController setBadgeForKeyPath:RJItemPath1];
     }
 }
 
 - (IBAction)clickItem2:(UIButton *)sender
 {
-    BOOL needShow = [self.badgeController statusForKeyPath:RJItemPath2];
+    BOOL needShow = [RJBadgeController statusForKeyPath:RJItemPath2];
     if (needShow) {
-        [self.badgeController clearBadgeForKeyPath:RJItemPath2];
+        [RJBadgeController clearBadgeForKeyPath:RJItemPath2];
     } else {
-        [self.badgeController setBadgeForKeyPath:RJItemPath2];
+        [RJBadgeController setBadgeForKeyPath:RJItemPath2];
     }
 }
 
