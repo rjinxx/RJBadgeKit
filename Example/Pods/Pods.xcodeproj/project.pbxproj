@@ -1,0 +1,819 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02A2CFFAAE0DE5E1DA626C0C0AACD0C6 /* NSObject+RJBadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE39B7FB0E51C78B01674724B94F098 /* NSObject+RJBadgeController.m */; };
+		0B0797F593794C3A2BAC2BAB08D347F7 /* NSString+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = BED5B353D566CC33C6F98AD011ECD3BE /* NSString+RJBadge.m */; };
+		268504EF20294B825F957D79BDDA5D1C /* Pods-RJBadgeKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D546D5168585621E0ADDBFBC05A71C4 /* Pods-RJBadgeKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FCBE863E188D691E6D4E3B77CE1B086 /* RJBadgeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C91CE2777C8B2E41D98389D55B95C2 /* RJBadgeManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		442BEC45171CD99FFA60062C47041711 /* NSObject+RJBadgeController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4245CA0287130D0F7156CFDFC16E3F17 /* NSObject+RJBadgeController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52CF8D3D349BAD5A91AAEF1992F744E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		589309442B4A3AEB25253C29BCB56BF6 /* Pods-RJBadgeKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD653647D3A7A2755B9C8F1675D59D7 /* Pods-RJBadgeKit_Example-dummy.m */; };
+		66F8C51FB985AFA4F213C7184E07FCE4 /* RJBadgeKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DE90031A77D970C18AD7B790C8D22B6 /* RJBadgeKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6881246194AA2E1F313FEE8DC8B0C4A9 /* RJBadgeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D7BAD825E19B9A56C5A6299ACC69ACC /* RJBadgeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69DBB678C20CDC889BAB83C2FE2776AC /* RJBadgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E39961FB33DB1E7A54EBBA1C77F1AFC9 /* RJBadgeManager.m */; };
+		72D47496A01351DE4931885A9B616A8A /* UIBarButtonItem+RJBadge.h in Headers */ = {isa = PBXBuildFile; fileRef = 87E782A41FBDD8AD05BC376622A04FEC /* UIBarButtonItem+RJBadge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		782BC6EA0924931C2D983779550BF205 /* RJBadgeController.h in Headers */ = {isa = PBXBuildFile; fileRef = D4837375A613869CAD7E7C6CDD6851C7 /* RJBadgeController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CC4D3C32CEF2C58C2E84787431544C9 /* Pods-RJBadgeKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BF6DB03ECDD63E219F3CFE35B7CE51 /* Pods-RJBadgeKit_Tests-dummy.m */; };
+		7F38E4EB0E1675B94CD0582A3C6075C2 /* UITabBarItem+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C906E6EA80D76E62B8E91C86C2EF1F2 /* UITabBarItem+RJBadge.m */; };
+		8610F32D3F861027DE0A8FD308BD738E /* Pods-RJBadgeKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E2BA8239FFF14272A5FBFFBE38ABDF15 /* Pods-RJBadgeKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F6380BFC279B55DB822D27AAD944938 /* RJBadgeInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 724609FC53B78C2DC5A01CC723AC37A9 /* RJBadgeInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A06D8C4065566E7B6EB510C44A7A35F9 /* RJBadge.h in Headers */ = {isa = PBXBuildFile; fileRef = 20DCC0D3ECC588514B90FA25ACDB6819 /* RJBadge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4C81D7DB6765EA285973F8316B4ECBF /* RJBadgeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE0DA5EDCCD5F42EF5E66F68F4B908 /* RJBadgeInfo.m */; };
+		ACDA888BE550AE3BA1EAE768AF0FD7D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B11E7F0651F16A1F3A2B9395F67A3D2A /* UIView+RJBadge.h in Headers */ = {isa = PBXBuildFile; fileRef = 54DDA1C9DBF9EC988FA2F3A548B0AEAE /* UIView+RJBadge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1909401699891FF5FD7F59989EEDBA4 /* RJBadgeModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEB68B3D2D2CE43EF6954CD905D3DDB /* RJBadgeModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5990BE7F4A88AD3F639659DA21C350F /* RJBadgeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CBF946EAAEC47CE39D842DEB5251366 /* RJBadgeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7A41A29EC4F9C56FB19AE12AB2F19CE /* NSString+RJBadge.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B1B605161B635DF13B17087767EBAB0 /* NSString+RJBadge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8E38170289CA68F113DF1EBD1279C69 /* UIView+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = D974FA8FCE6831D158AD1BAEFF590E0E /* UIView+RJBadge.m */; };
+		D06C3377A154EBF4CCD29E306B4BB453 /* RJBadgeKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D42B296CD02787E7D51C8B8B2252E6 /* RJBadgeKit-dummy.m */; };
+		E38DEA223ADC06014A83B5558C0927A0 /* UIBarButtonItem+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 6305F6C51301CD7C33EE0B9AEDC75058 /* UIBarButtonItem+RJBadge.m */; };
+		E881392384F1E1FB82DC2F26A7FA7560 /* RJBadgeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2274C34F7E75F08DDD9DE64622834F06 /* RJBadgeModel.m */; };
+		EB5BEAE7973F48444C3F1B0D2A45D363 /* UITabBarItem+RJBadge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AE405784EDCCF4C885A231719258AAD /* UITabBarItem+RJBadge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE99C23F0437D9F2BCBCB9D0203F55AF /* RJBadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FF189D42406AC47CE014A57D8CEC8E /* RJBadgeController.m */; };
+		F5491A49AF9C2E52A2A9AE67F4730E80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42FD00AC313B4F14BFBDA77D71875D0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEB55C20B89DBC769447E5DB55611E64;
+			remoteInfo = RJBadgeKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03F06C6CD32223F383061A126F1A141A /* RJBadgeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RJBadgeKit.framework; path = RJBadgeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B1B605161B635DF13B17087767EBAB0 /* NSString+RJBadge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+RJBadge.h"; sourceTree = "<group>"; };
+		15C3DC501422D983B32FD07C3A9F0E10 /* Pods-RJBadgeKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RJBadgeKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		18DFE1BDFBA911D7CEAAD8545C2CC038 /* Pods-RJBadgeKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RJBadgeKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		1ABE0DA5EDCCD5F42EF5E66F68F4B908 /* RJBadgeInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RJBadgeInfo.m; sourceTree = "<group>"; };
+		20DCC0D3ECC588514B90FA25ACDB6819 /* RJBadge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RJBadge.h; sourceTree = "<group>"; };
+		219C86EFBA36A84CF6964F5111820050 /* RJBadgeKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RJBadgeKit-prefix.pch"; sourceTree = "<group>"; };
+		2274C34F7E75F08DDD9DE64622834F06 /* RJBadgeModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RJBadgeModel.m; sourceTree = "<group>"; };
+		29BF6DB03ECDD63E219F3CFE35B7CE51 /* Pods-RJBadgeKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RJBadgeKit_Tests-dummy.m"; sourceTree = "<group>"; };
+		2C906E6EA80D76E62B8E91C86C2EF1F2 /* UITabBarItem+RJBadge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+RJBadge.m"; sourceTree = "<group>"; };
+		31A46210EDD31CA136BE8F41CB792C8C /* Pods-RJBadgeKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-RJBadgeKit_Tests.modulemap"; sourceTree = "<group>"; };
+		33AAB01AED2D2FDAABE4B2A723B3AEE1 /* RJBadgeKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RJBadgeKit.xcconfig; sourceTree = "<group>"; };
+		3AE39B7FB0E51C78B01674724B94F098 /* NSObject+RJBadgeController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RJBadgeController.m"; sourceTree = "<group>"; };
+		3B4FE995EB0BF4FF2D3370420AF09AC4 /* Pods-RJBadgeKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RJBadgeKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B771DE2ECFA847C64043269682BD9E1 /* Pods-RJBadgeKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RJBadgeKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		3C93D9E72A58FC2037DB9B819F56F071 /* Pods-RJBadgeKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RJBadgeKit_Example-frameworks.sh"; sourceTree = "<group>"; };
+		3CC0AFA25C70E12996A5B9B60E3464C1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE90031A77D970C18AD7B790C8D22B6 /* RJBadgeKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RJBadgeKit-umbrella.h"; sourceTree = "<group>"; };
+		4245CA0287130D0F7156CFDFC16E3F17 /* NSObject+RJBadgeController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+RJBadgeController.h"; sourceTree = "<group>"; };
+		4E9A7032E608795C4159ACC313CCD3CB /* Pods-RJBadgeKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RJBadgeKit_Example-resources.sh"; sourceTree = "<group>"; };
+		4FEB68B3D2D2CE43EF6954CD905D3DDB /* RJBadgeModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RJBadgeModel.h; sourceTree = "<group>"; };
+		54DDA1C9DBF9EC988FA2F3A548B0AEAE /* UIView+RJBadge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+RJBadge.h"; sourceTree = "<group>"; };
+		54DE8AA425C3DF04F715C20C325FC8DD /* Pods-RJBadgeKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RJBadgeKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5D546D5168585621E0ADDBFBC05A71C4 /* Pods-RJBadgeKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RJBadgeKit_Example-umbrella.h"; sourceTree = "<group>"; };
+		5D7BAD825E19B9A56C5A6299ACC69ACC /* RJBadgeKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RJBadgeKit.h; path = RJBadgeKit/Classes/RJBadgeKit.h; sourceTree = "<group>"; };
+		61C91CE2777C8B2E41D98389D55B95C2 /* RJBadgeManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RJBadgeManager.h; sourceTree = "<group>"; };
+		6305F6C51301CD7C33EE0B9AEDC75058 /* UIBarButtonItem+RJBadge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+RJBadge.m"; sourceTree = "<group>"; };
+		63D42B296CD02787E7D51C8B8B2252E6 /* RJBadgeKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RJBadgeKit-dummy.m"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6B15B6BC879F5CBC4049E911D250381D /* Pods-RJBadgeKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RJBadgeKit_Tests-resources.sh"; sourceTree = "<group>"; };
+		6BD653647D3A7A2755B9C8F1675D59D7 /* Pods-RJBadgeKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RJBadgeKit_Example-dummy.m"; sourceTree = "<group>"; };
+		724609FC53B78C2DC5A01CC723AC37A9 /* RJBadgeInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RJBadgeInfo.h; sourceTree = "<group>"; };
+		72CFC06EE2DFED0478D3B70C22477C74 /* Pods-RJBadgeKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RJBadgeKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7647C8C8A5E7AA44308F022CCD9BB54E /* RJBadgeKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RJBadgeKit.modulemap; sourceTree = "<group>"; };
+		7AE405784EDCCF4C885A231719258AAD /* UITabBarItem+RJBadge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+RJBadge.h"; sourceTree = "<group>"; };
+		7CBF946EAAEC47CE39D842DEB5251366 /* RJBadgeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RJBadgeView.h; sourceTree = "<group>"; };
+		8185EFF1AACB8315F9385C2A9F808234 /* Pods-RJBadgeKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RJBadgeKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		81AFFB37A9E9BE91D689D264D7E0F980 /* Pods-RJBadgeKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RJBadgeKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		868E0D191BCF6DE87386DD6B7190396A /* Pods_RJBadgeKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RJBadgeKit_Example.framework; path = "Pods-RJBadgeKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87E782A41FBDD8AD05BC376622A04FEC /* UIBarButtonItem+RJBadge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+RJBadge.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BC53D348A847F4060D0EB99CECE38111 /* Pods-RJBadgeKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RJBadgeKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BDAE24FB02D52523D04780391B4ED407 /* Pods-RJBadgeKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-RJBadgeKit_Example.modulemap"; sourceTree = "<group>"; };
+		BED5B353D566CC33C6F98AD011ECD3BE /* NSString+RJBadge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+RJBadge.m"; sourceTree = "<group>"; };
+		D4837375A613869CAD7E7C6CDD6851C7 /* RJBadgeController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RJBadgeController.h; sourceTree = "<group>"; };
+		D633CA0D7D10E138E86B9B39F80BA951 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D974FA8FCE6831D158AD1BAEFF590E0E /* UIView+RJBadge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+RJBadge.m"; sourceTree = "<group>"; };
+		E2BA8239FFF14272A5FBFFBE38ABDF15 /* Pods-RJBadgeKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RJBadgeKit_Tests-umbrella.h"; sourceTree = "<group>"; };
+		E39961FB33DB1E7A54EBBA1C77F1AFC9 /* RJBadgeManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RJBadgeManager.m; sourceTree = "<group>"; };
+		E8FF189D42406AC47CE014A57D8CEC8E /* RJBadgeController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RJBadgeController.m; sourceTree = "<group>"; };
+		EAD5F917DC1F7BFB6E4BA29D6D56886A /* Pods_RJBadgeKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RJBadgeKit_Tests.framework; path = "Pods-RJBadgeKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A11FF1A6FB7372F8C373249A974756 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A77E3CA88611FC9FD6F9871A10AC536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACDA888BE550AE3BA1EAE768AF0FD7D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56429A64D469B68B6D32E0BEAD434460 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5491A49AF9C2E52A2A9AE67F4730E80 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E03BC8739CDF09CBD4A54C987CD1783 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52CF8D3D349BAD5A91AAEF1992F744E7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0398E15E98C29709113E7AF44CC32A68 /* BadgeModel */ = {
+			isa = PBXGroup;
+			children = (
+				20DCC0D3ECC588514B90FA25ACDB6819 /* RJBadge.h */,
+				724609FC53B78C2DC5A01CC723AC37A9 /* RJBadgeInfo.h */,
+				1ABE0DA5EDCCD5F42EF5E66F68F4B908 /* RJBadgeInfo.m */,
+				4FEB68B3D2D2CE43EF6954CD905D3DDB /* RJBadgeModel.h */,
+				2274C34F7E75F08DDD9DE64622834F06 /* RJBadgeModel.m */,
+			);
+			name = BadgeModel;
+			path = RJBadgeKit/Classes/BadgeModel;
+			sourceTree = "<group>";
+		};
+		072828CD5FA5CDF03EDAA746A4CB9878 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CC0AFA25C70E12996A5B9B60E3464C1 /* Info.plist */,
+				7647C8C8A5E7AA44308F022CCD9BB54E /* RJBadgeKit.modulemap */,
+				33AAB01AED2D2FDAABE4B2A723B3AEE1 /* RJBadgeKit.xcconfig */,
+				63D42B296CD02787E7D51C8B8B2252E6 /* RJBadgeKit-dummy.m */,
+				219C86EFBA36A84CF6964F5111820050 /* RJBadgeKit-prefix.pch */,
+				3DE90031A77D970C18AD7B790C8D22B6 /* RJBadgeKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/RJBadgeKit";
+			sourceTree = "<group>";
+		};
+		09AD5A263AB6C4359B68805D351AB5B6 /* Pods-RJBadgeKit_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F6A11FF1A6FB7372F8C373249A974756 /* Info.plist */,
+				31A46210EDD31CA136BE8F41CB792C8C /* Pods-RJBadgeKit_Tests.modulemap */,
+				8185EFF1AACB8315F9385C2A9F808234 /* Pods-RJBadgeKit_Tests-acknowledgements.markdown */,
+				54DE8AA425C3DF04F715C20C325FC8DD /* Pods-RJBadgeKit_Tests-acknowledgements.plist */,
+				29BF6DB03ECDD63E219F3CFE35B7CE51 /* Pods-RJBadgeKit_Tests-dummy.m */,
+				15C3DC501422D983B32FD07C3A9F0E10 /* Pods-RJBadgeKit_Tests-frameworks.sh */,
+				6B15B6BC879F5CBC4049E911D250381D /* Pods-RJBadgeKit_Tests-resources.sh */,
+				E2BA8239FFF14272A5FBFFBE38ABDF15 /* Pods-RJBadgeKit_Tests-umbrella.h */,
+				3B4FE995EB0BF4FF2D3370420AF09AC4 /* Pods-RJBadgeKit_Tests.debug.xcconfig */,
+				3B771DE2ECFA847C64043269682BD9E1 /* Pods-RJBadgeKit_Tests.release.xcconfig */,
+			);
+			name = "Pods-RJBadgeKit_Tests";
+			path = "Target Support Files/Pods-RJBadgeKit_Tests";
+			sourceTree = "<group>";
+		};
+		1B4DF2AA11AD5F8D5C0907651E523730 /* BadgeController */ = {
+			isa = PBXGroup;
+			children = (
+				4245CA0287130D0F7156CFDFC16E3F17 /* NSObject+RJBadgeController.h */,
+				3AE39B7FB0E51C78B01674724B94F098 /* NSObject+RJBadgeController.m */,
+				D4837375A613869CAD7E7C6CDD6851C7 /* RJBadgeController.h */,
+				E8FF189D42406AC47CE014A57D8CEC8E /* RJBadgeController.m */,
+				61C91CE2777C8B2E41D98389D55B95C2 /* RJBadgeManager.h */,
+				E39961FB33DB1E7A54EBBA1C77F1AFC9 /* RJBadgeManager.m */,
+			);
+			name = BadgeController;
+			path = RJBadgeKit/Classes/BadgeController;
+			sourceTree = "<group>";
+		};
+		4B8CB192D1D27653C4C1F8556132C71C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				868E0D191BCF6DE87386DD6B7190396A /* Pods_RJBadgeKit_Example.framework */,
+				EAD5F917DC1F7BFB6E4BA29D6D56886A /* Pods_RJBadgeKit_Tests.framework */,
+				03F06C6CD32223F383061A126F1A141A /* RJBadgeKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5199C715777F611D3F35C6E434514749 /* Pods-RJBadgeKit_Example */ = {
+			isa = PBXGroup;
+			children = (
+				D633CA0D7D10E138E86B9B39F80BA951 /* Info.plist */,
+				BDAE24FB02D52523D04780391B4ED407 /* Pods-RJBadgeKit_Example.modulemap */,
+				BC53D348A847F4060D0EB99CECE38111 /* Pods-RJBadgeKit_Example-acknowledgements.markdown */,
+				18DFE1BDFBA911D7CEAAD8545C2CC038 /* Pods-RJBadgeKit_Example-acknowledgements.plist */,
+				6BD653647D3A7A2755B9C8F1675D59D7 /* Pods-RJBadgeKit_Example-dummy.m */,
+				3C93D9E72A58FC2037DB9B819F56F071 /* Pods-RJBadgeKit_Example-frameworks.sh */,
+				4E9A7032E608795C4159ACC313CCD3CB /* Pods-RJBadgeKit_Example-resources.sh */,
+				5D546D5168585621E0ADDBFBC05A71C4 /* Pods-RJBadgeKit_Example-umbrella.h */,
+				72CFC06EE2DFED0478D3B70C22477C74 /* Pods-RJBadgeKit_Example.debug.xcconfig */,
+				81AFFB37A9E9BE91D689D264D7E0F980 /* Pods-RJBadgeKit_Example.release.xcconfig */,
+			);
+			name = "Pods-RJBadgeKit_Example";
+			path = "Target Support Files/Pods-RJBadgeKit_Example";
+			sourceTree = "<group>";
+		};
+		5F48EB7A140A44EB1B1DD0639E089174 /* BadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				7CBF946EAAEC47CE39D842DEB5251366 /* RJBadgeView.h */,
+				87E782A41FBDD8AD05BC376622A04FEC /* UIBarButtonItem+RJBadge.h */,
+				6305F6C51301CD7C33EE0B9AEDC75058 /* UIBarButtonItem+RJBadge.m */,
+				7AE405784EDCCF4C885A231719258AAD /* UITabBarItem+RJBadge.h */,
+				2C906E6EA80D76E62B8E91C86C2EF1F2 /* UITabBarItem+RJBadge.m */,
+				54DDA1C9DBF9EC988FA2F3A548B0AEAE /* UIView+RJBadge.h */,
+				D974FA8FCE6831D158AD1BAEFF590E0E /* UIView+RJBadge.m */,
+			);
+			name = BadgeView;
+			path = RJBadgeKit/Classes/BadgeView;
+			sourceTree = "<group>";
+		};
+		7752EC25A1CDD09744BBD0FAE83D04B4 /* RJBadgeKit */ = {
+			isa = PBXGroup;
+			children = (
+				5D7BAD825E19B9A56C5A6299ACC69ACC /* RJBadgeKit.h */,
+				1B4DF2AA11AD5F8D5C0907651E523730 /* BadgeController */,
+				0398E15E98C29709113E7AF44CC32A68 /* BadgeModel */,
+				5F48EB7A140A44EB1B1DD0639E089174 /* BadgeView */,
+				B32011653C42029892A6F2F65365EB58 /* Helper */,
+				072828CD5FA5CDF03EDAA746A4CB9878 /* Support Files */,
+			);
+			name = RJBadgeKit;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				D07E9AC3A2F051F191E8B3B5B8AD32FF /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				4B8CB192D1D27653C4C1F8556132C71C /* Products */,
+				BD08744E90D6F38EB92DDAF3035AAD44 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B32011653C42029892A6F2F65365EB58 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B605161B635DF13B17087767EBAB0 /* NSString+RJBadge.h */,
+				BED5B353D566CC33C6F98AD011ECD3BE /* NSString+RJBadge.m */,
+			);
+			name = Helper;
+			path = RJBadgeKit/Classes/Helper;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD08744E90D6F38EB92DDAF3035AAD44 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5199C715777F611D3F35C6E434514749 /* Pods-RJBadgeKit_Example */,
+				09AD5A263AB6C4359B68805D351AB5B6 /* Pods-RJBadgeKit_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D07E9AC3A2F051F191E8B3B5B8AD32FF /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7752EC25A1CDD09744BBD0FAE83D04B4 /* RJBadgeKit */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A8B8B906BC395F3886F9A5E7360765BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8610F32D3F861027DE0A8FD308BD738E /* Pods-RJBadgeKit_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD684217FCE8FF1E5D66E426C1C20D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442BEC45171CD99FFA60062C47041711 /* NSObject+RJBadgeController.h in Headers */,
+				B7A41A29EC4F9C56FB19AE12AB2F19CE /* NSString+RJBadge.h in Headers */,
+				A06D8C4065566E7B6EB510C44A7A35F9 /* RJBadge.h in Headers */,
+				782BC6EA0924931C2D983779550BF205 /* RJBadgeController.h in Headers */,
+				9F6380BFC279B55DB822D27AAD944938 /* RJBadgeInfo.h in Headers */,
+				66F8C51FB985AFA4F213C7184E07FCE4 /* RJBadgeKit-umbrella.h in Headers */,
+				6881246194AA2E1F313FEE8DC8B0C4A9 /* RJBadgeKit.h in Headers */,
+				2FCBE863E188D691E6D4E3B77CE1B086 /* RJBadgeManager.h in Headers */,
+				B1909401699891FF5FD7F59989EEDBA4 /* RJBadgeModel.h in Headers */,
+				B5990BE7F4A88AD3F639659DA21C350F /* RJBadgeView.h in Headers */,
+				72D47496A01351DE4931885A9B616A8A /* UIBarButtonItem+RJBadge.h in Headers */,
+				EB5BEAE7973F48444C3F1B0D2A45D363 /* UITabBarItem+RJBadge.h in Headers */,
+				B11E7F0651F16A1F3A2B9395F67A3D2A /* UIView+RJBadge.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFE9E09E6BBE6DF8358D5A857F7817A0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				268504EF20294B825F957D79BDDA5D1C /* Pods-RJBadgeKit_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1C3892737AFA53B74C068836BA37C4CA /* Pods-RJBadgeKit_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C95814E990588B9604EA26D76B879E51 /* Build configuration list for PBXNativeTarget "Pods-RJBadgeKit_Tests" */;
+			buildPhases = (
+				962AAD73196798DF570C8526384F99D1 /* Sources */,
+				2A77E3CA88611FC9FD6F9871A10AC536 /* Frameworks */,
+				A8B8B906BC395F3886F9A5E7360765BB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-RJBadgeKit_Tests";
+			productName = "Pods-RJBadgeKit_Tests";
+			productReference = EAD5F917DC1F7BFB6E4BA29D6D56886A /* Pods_RJBadgeKit_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		93D5FE7181D732E4DDF09854E1437B0C /* Pods-RJBadgeKit_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 617357C170F9FC13D0B038DA53A28E0A /* Build configuration list for PBXNativeTarget "Pods-RJBadgeKit_Example" */;
+			buildPhases = (
+				14E9A579235ADE70BD2C09114E0DE644 /* Sources */,
+				9E03BC8739CDF09CBD4A54C987CD1783 /* Frameworks */,
+				CFE9E09E6BBE6DF8358D5A857F7817A0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FA13306B8D8781661E0518CDF4B1ECF /* PBXTargetDependency */,
+			);
+			name = "Pods-RJBadgeKit_Example";
+			productName = "Pods-RJBadgeKit_Example";
+			productReference = 868E0D191BCF6DE87386DD6B7190396A /* Pods_RJBadgeKit_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EEB55C20B89DBC769447E5DB55611E64 /* RJBadgeKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8C439028155CDF9BA5EF5B259A0799D /* Build configuration list for PBXNativeTarget "RJBadgeKit" */;
+			buildPhases = (
+				78D4B91E5B5D3064E329546CF0AA9750 /* Sources */,
+				56429A64D469B68B6D32E0BEAD434460 /* Frameworks */,
+				CBD684217FCE8FF1E5D66E426C1C20D3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RJBadgeKit;
+			productName = RJBadgeKit;
+			productReference = 03F06C6CD32223F383061A126F1A141A /* RJBadgeKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4B8CB192D1D27653C4C1F8556132C71C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93D5FE7181D732E4DDF09854E1437B0C /* Pods-RJBadgeKit_Example */,
+				1C3892737AFA53B74C068836BA37C4CA /* Pods-RJBadgeKit_Tests */,
+				EEB55C20B89DBC769447E5DB55611E64 /* RJBadgeKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14E9A579235ADE70BD2C09114E0DE644 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				589309442B4A3AEB25253C29BCB56BF6 /* Pods-RJBadgeKit_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78D4B91E5B5D3064E329546CF0AA9750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A2CFFAAE0DE5E1DA626C0C0AACD0C6 /* NSObject+RJBadgeController.m in Sources */,
+				0B0797F593794C3A2BAC2BAB08D347F7 /* NSString+RJBadge.m in Sources */,
+				EE99C23F0437D9F2BCBCB9D0203F55AF /* RJBadgeController.m in Sources */,
+				A4C81D7DB6765EA285973F8316B4ECBF /* RJBadgeInfo.m in Sources */,
+				D06C3377A154EBF4CCD29E306B4BB453 /* RJBadgeKit-dummy.m in Sources */,
+				69DBB678C20CDC889BAB83C2FE2776AC /* RJBadgeManager.m in Sources */,
+				E881392384F1E1FB82DC2F26A7FA7560 /* RJBadgeModel.m in Sources */,
+				E38DEA223ADC06014A83B5558C0927A0 /* UIBarButtonItem+RJBadge.m in Sources */,
+				7F38E4EB0E1675B94CD0582A3C6075C2 /* UITabBarItem+RJBadge.m in Sources */,
+				B8E38170289CA68F113DF1EBD1279C69 /* UIView+RJBadge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962AAD73196798DF570C8526384F99D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CC4D3C32CEF2C58C2E84787431544C9 /* Pods-RJBadgeKit_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FA13306B8D8781661E0518CDF4B1ECF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RJBadgeKit;
+			target = EEB55C20B89DBC769447E5DB55611E64 /* RJBadgeKit */;
+			targetProxy = 42FD00AC313B4F14BFBDA77D71875D0F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05FF9D4644D8D8E3D671447519B1D3E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B4FE995EB0BF4FF2D3370420AF09AC4 /* Pods-RJBadgeKit_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RJBadgeKit_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RJBadgeKit_Tests/Pods-RJBadgeKit_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_RJBadgeKit_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4EB583979201F6AFA094F1BDB4FD7994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33AAB01AED2D2FDAABE4B2A723B3AEE1 /* RJBadgeKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RJBadgeKit/RJBadgeKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RJBadgeKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RJBadgeKit/RJBadgeKit.modulemap";
+				PRODUCT_NAME = RJBadgeKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		731DC216E1A58545B559F6E0A2418060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		78B2DB413183B1DD96DEEEA4288EC4B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72CFC06EE2DFED0478D3B70C22477C74 /* Pods-RJBadgeKit_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RJBadgeKit_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RJBadgeKit_Example/Pods-RJBadgeKit_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_RJBadgeKit_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7DEE6E2FDEEDE2905C0ACB96548879A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33AAB01AED2D2FDAABE4B2A723B3AEE1 /* RJBadgeKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RJBadgeKit/RJBadgeKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RJBadgeKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RJBadgeKit/RJBadgeKit.modulemap";
+				PRODUCT_NAME = RJBadgeKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CEF3D28CDC684E95A7C58CF9AF279791 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81AFFB37A9E9BE91D689D264D7E0F980 /* Pods-RJBadgeKit_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RJBadgeKit_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RJBadgeKit_Example/Pods-RJBadgeKit_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_RJBadgeKit_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DADB47880373698367DC9CF6EF0C5EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B771DE2ECFA847C64043269682BD9E1 /* Pods-RJBadgeKit_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RJBadgeKit_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RJBadgeKit_Tests/Pods-RJBadgeKit_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_RJBadgeKit_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
+				731DC216E1A58545B559F6E0A2418060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		617357C170F9FC13D0B038DA53A28E0A /* Build configuration list for PBXNativeTarget "Pods-RJBadgeKit_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78B2DB413183B1DD96DEEEA4288EC4B9 /* Debug */,
+				CEF3D28CDC684E95A7C58CF9AF279791 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8C439028155CDF9BA5EF5B259A0799D /* Build configuration list for PBXNativeTarget "RJBadgeKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EB583979201F6AFA094F1BDB4FD7994 /* Debug */,
+				7DEE6E2FDEEDE2905C0ACB96548879A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C95814E990588B9604EA26D76B879E51 /* Build configuration list for PBXNativeTarget "Pods-RJBadgeKit_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05FF9D4644D8D8E3D671447519B1D3E6 /* Debug */,
+				DADB47880373698367DC9CF6EF0C5EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

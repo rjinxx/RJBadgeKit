@@ -1,0 +1,6 @@
+framework module RJBadgeKit {
+  umbrella header "RJBadgeKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

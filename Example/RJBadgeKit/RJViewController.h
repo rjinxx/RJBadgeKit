@@ -2,8 +2,8 @@
 //  RJViewController.h
 //  RJBadgeKit
 //
-//  Created by RylanJIN on 12/22/2017.
-//  Copyright (c) 2017 RylanJIN. All rights reserved.
+//  Created by Ryan Jin on 12/22/2017.
+//  Copyright (c) 2017 Ryan Jin. All rights reserved.
 //
 
 @import UIKit;

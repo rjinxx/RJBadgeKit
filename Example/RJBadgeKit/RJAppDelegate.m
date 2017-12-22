@@ -7,12 +7,23 @@
 //
 
 #import "RJAppDelegate.h"
+#import "RJBadgeKit.h"
 
 @implementation RJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UITabBarController *tabVC = (UITabBarController *)self.window.rootViewController;
+    UITabBarItem *more        = tabVC.tabBar.items[1];
+    
+    NSString *demoPath        = @"root.pbdemo";
+    
+    [self.badgeController setBadgeForKeyPath:demoPath];
+    
+    // set tab bar item red dot
+    [self.badgeController observePath:demoPath badgeView:more block:nil];
+    
     return YES;
 }
 
