@@ -93,7 +93,7 @@ RJBadgeKit的用法包括**a)** add observer **b)** set/clear badge **c)** show/
 
 #### Show/hide badge
 
-RJBadgeKit支持UIView, UITabBarItem和UIBarButtonItem的小红点显示。小红点类型则支持默认圆形小红点，数值和自定义view/图片。显示的优先级为number > custom view > red dot.
+RJBadgeKit支持UIView, UITabBarItem和UIBarButtonItem的小红点显示。小红点类型则支持默认圆形小红点，数值和自定义view/图片。显示的优先级为number > custom view > red dot
 
 ```
 promotionButton.badgeOffset = CGPointMake(-50, 0); // 调整小红点的显示位置offset, 相对于右上角
