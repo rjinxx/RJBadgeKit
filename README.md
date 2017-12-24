@@ -24,7 +24,7 @@ RJBadgeKit是一套完整的小红点解决方案，使用场景为App某个功�
 
 ![image](https://github.com/RylanJIN/RJBadgeKit/blob/master/Example/demo.gif)
 
-RJBadgeKit的小红点所支持的路径格式为root.xx.xx, 其中root为默认的根路径。如下图所示，root.first为子路径，root.second为同级子路径。root的小红点显示为
+RJBadgeKit的小红点所支持的路径格式为root.xx.xx, 小红点原则是父节点的小红点为子节点的小红点并集。root为默认的根路径。如下图所示，root.first为子路径，root.second为同级子路径。在纯红点模式下，root的小红点显示为root.first, root.second和root.third的并集，同理在数字显示模式下，root的badge数量为root.first, root.second和root.third的badge数量之和。而root.first的badge数量则又为root.first.firstA和root.first.firstB的和。
 
 ![image](https://github.com/RylanJIN/RJBadgeKit/blob/master/Example/path.png)
 
