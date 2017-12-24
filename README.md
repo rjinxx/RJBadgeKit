@@ -51,9 +51,9 @@ RJBadgeKit的用法包括**a)** add observer **b)** set/clear badge **c)** show/
 
 这里需要注意的几点是:
 
-**1)** self.badgeController为动态生成的属性，无需自己定义和初始化，RJBadgeKit为所有NSObject对象通过category添加了badgeController
-**2)** 无需调用remove observer, RJBadgeKit通过自释放机制自动移除observer. 如果确实需要提前移除观察者，可以调用unobservePath接口
-**3)** 为防止循环引用，在badge的block里面用参数observer来代替self, RJBadgeKit对observer(即self.badgeController的self)进行了weak化处理并通过block回调参数传出
+1. self.badgeController为动态生成的属性，无需自己定义和初始化，RJBadgeKit为所有NSObject对象通过category添加了badgeController
+2. 无需调用remove observer, RJBadgeKit通过自释放机制自动移除observer. 如果确实需要提前移除观察者，可以调用unobservePath接口
+3. 为防止循环引用，在badge的block里面用参数observer来代替self, RJBadgeKit对observer(即self.badgeController的self)进行了weak化处理并通过block回调参数传出
 
 #### Set/clear badge
 
@@ -76,24 +76,34 @@ RJBadgeKit的用法包括**a)** add observer **b)** set/clear badge **c)** show/
 [RJBadgeController setBadgeForKeyPath:@"root.promotion.item1" count:5];
 ```
 
-在这个情况下，promotionButton上显示的数值(亦即root.promotion路径对应的badge值)为root.promotion.item1和root.promotion.item2及其所有子节点的数值之后。
-
-当用户点击查看item1和item2后，分别调用clear badeg接口:
+在这个情况下，promotionButton上显示的数值(亦即root.promotion路径对应的badge值)为root.promotion.item1和root.promotion.item2及其所有子节点的数值之和。当用户点击查看item1和item2后，分别调用clear badeg接口:
 
 ```
 [RJBadgeController clearBadgeForKeyPath:@"root.promotion.item1"];
 [RJBadgeController clearBadgeForKeyPath:@"root.promotion.item2"];
 ```
 
-这时父节点root.promotion的badge自动clear, promotionButton的小红点会自动隐藏。
-
-如果希望在item1被clear后就强制清除root.promotion的badge, 则可以在clear item1后调用:
+这时父节点root.promotion的badge自动clear, promotionButton的小红点会自动隐藏。如果希望在item1被clear后就强制清除root.promotion的badge, 则可以在clear item1后调用:
 
 ```
 [RJBadgeController clearBadgeForKeyPath:@"root.promotion" force:YES];
 ```
 
 这样即使子节点的badge尚未全部清除，父节点也会被强制clear. P.S 正常情况下不应该去调用force:YES, 如果非要调用，可能是路径结构设计不合理了。
+
+#### Show/hide badge
+
+RJBadgeKit支持UIView, UITabBarItem和UIBarButtonItem的小红点显示。小红点类型则支持默认圆形小红点，数值和自定义view/图片。显示的优先级为number > custom view > red dot.
+
+```
+promotionButton.badgeOffset = CGPointMake(-50, 0); // 调整小红点的显示位置offset, 相对于右上角
+
+[self.promotionButton setBadgeImage:[UIImage imageNamed:@"badgeNew"]]; // 显示自定义的badge icon
+
+[self.promotionButton setCustomView:self.customBadgeView]; // 显示自定义的badge view
+```
+
+更详细的使用示例请参考RJBadgeKit的Example工程
 
 ## Author
 
