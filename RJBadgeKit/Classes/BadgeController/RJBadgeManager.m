@@ -72,6 +72,10 @@ NS_ASSUME_NONNULL_BEGIN
     return self;
 }
 
+- (void)dealloc {
+    pthread_mutex_destroy(&_mutex);
+}
+
 #pragma mark - Observe
 
 - (void)observeWithInfo:(nullable RJBadgeInfo *)info
@@ -170,10 +174,6 @@ NS_ASSUME_NONNULL_BEGIN
     [self setBadgeForKeyPath:keyPath count:0];
 }
 
-/**
- May be we have bug involved in this logic, e.g.
- root.perfect365.test v.s. root.test.perfect365 -> NEED CONFIRM
- */
 - (void)setBadgeForKeyPath:(NSString *)keyPath count:(NSUInteger)count
 {
     if (!keyPath) return;
@@ -198,9 +198,9 @@ NS_ASSUME_NONNULL_BEGIN
         if (!objFind) {
             BOOL set         = ([name isEqualToString:[keyPathArray lastObject]]);
             objFind = [RJBadgeModel initWithDictionary:@{RJBadgeNameKey : name,
-                                                           RJBadgePathKey : subKeyPath,
-                                                           RJBadgeCountKey: @(0),
-                                                           RJBadgeShowKey : @(set)}];
+                                                         RJBadgePathKey : subKeyPath,
+                                                         RJBadgeCountKey: @(0),
+                                                         RJBadgeShowKey : @(set)}];
             objFind.parent   = bParent;
             [bParent addChild:objFind];
         }
