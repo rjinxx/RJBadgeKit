@@ -20,6 +20,8 @@ pod 'RJBadgeKit'
 
 ## Introduction
 
+https://www.jianshu.com/p/b6ca93f92eb3
+
 RJBadgeKit是一套完整的小红点(消息推送提示)解决方案，使用场景为App某个功能块有内容更新或有未读消息时右上角会有小红点提示。RJBadgeKit支持**小红点**和**数字**显示两种形式，小红点也可以是**自定义图片**。 另外，提供多层级小红点的关联显示逻辑，比如微信tab上的小红点显示数字为聊天列表里未读消息的总和，只有所有未读消息都清空的情况下tab上的小红点才会消失。
 
 ![image](https://github.com/RylanJIN/RJBadgeKit/blob/master/Example/demo.gif)
