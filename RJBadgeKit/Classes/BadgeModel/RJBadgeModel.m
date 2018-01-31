@@ -7,6 +7,7 @@
 //
 
 #import "RJBadgeModel.h"
+#import <pthread/pthread.h>
 
 NSString * const RJBadgeRootPath    = @"root";
 
@@ -25,7 +26,9 @@ NSString * const RJBadgeCountKey    = @"RJBadgeCountKey";
 
 @end
 
-@implementation RJBadgeModel
+@implementation RJBadgeModel {
+    pthread_mutex_t _lock;
+}
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic
 {
@@ -47,6 +50,7 @@ NSString * const RJBadgeCountKey    = @"RJBadgeCountKey";
                 if (obj) {obj.parent = self; [self.children addObject:obj];}
             }];
         }
+        pthread_mutex_init(&_lock, NULL);
     }
     return self;
 }
@@ -65,6 +69,10 @@ NSString * const RJBadgeCountKey    = @"RJBadgeCountKey";
     return model;
 }
 
+- (void)dealloc {
+    pthread_mutex_destroy(&_lock);
+}
+
 #pragma mark - RJBadge
 + (id<RJBadge>)initWithDictionary:(NSDictionary *)dic
 {
@@ -75,21 +83,41 @@ NSString * const RJBadgeCountKey    = @"RJBadgeCountKey";
 
 - (void)addChild:(id<RJBadge>)child
 {
-    @synchronized (self) {
-        if (child) [self.children addObject:child];
-    }
+    pthread_mutex_lock(&_lock);
+    
+    if (child) [self.children addObject:child];
+    
+    pthread_mutex_unlock(&_lock);
 }
 
 - (void)removeChild:(id<RJBadge>)child
 {
-    @synchronized (self) {
-        if ([self.children containsObject:child]) {
-            [self.children removeObject:child];
-            if (![self.children count]) {
-                self.needShow = 0;
-                self.count    = 0;
-            }
+    pthread_mutex_lock(&_lock);
+    
+    if ([self.children containsObject:child]) {
+        [self.children removeObject:child];
+        if (![self.children count]) {
+            self.needShow = NO;
+            self.count    = 0;
         }
+    }
+    
+    pthread_mutex_unlock(&_lock);
+}
+
+- (void)removeAllChildren;
+{
+    pthread_mutex_lock(&_lock);
+    
+    NSArray *children = [self.children copy];
+    
+    [self.children removeAllObjects];
+    
+    pthread_mutex_unlock(&_lock);
+    
+    for (id<RJBadge> child in children) {
+        child.needShow = NO;
+        child.count    = 0;
     }
 }
 

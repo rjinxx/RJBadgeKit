@@ -40,6 +40,7 @@
 
 - (void)addChild:(id<RJBadge>)child;     // add leaf
 - (void)removeChild:(id<RJBadge>)child;  // cut leaf
+- (void)removeAllChildren;               // clearAll
 
 - (void)removeFromParent; // [parent removeChild:self]
 

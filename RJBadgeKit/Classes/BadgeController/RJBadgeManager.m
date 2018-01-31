@@ -244,15 +244,16 @@ NS_ASSUME_NONNULL_BEGIN
                 break;
             }
         }
-        
         if (!objFind) {
             pthread_mutex_unlock(&_mutex);
             return;
         }
-        
         if ([name isEqualToString:[keyPathArray lastObject]]) {
             objFind.needShow  = NO;
             if ([objFind.children count] == 0 || forced) {
+                if (forced) {
+                    [objFind removeAllChildren];
+                }
                 objFind.count = 0;
                 [objFind.parent removeChild:objFind];
                 mObj  = [(id)objFind copy];
@@ -262,7 +263,14 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }
     pthread_mutex_unlock(&_mutex);
-
+    // to do..notify child who's parent has been removed
+    /**
+     * if ([mObj.children count] && forced) {
+     *     for (id<P365Badge> cObj in mObj.children) {
+     *         [self clearBadgeForKeyPath:cObj.keyPath];
+     *     }
+     * }
+     */
     [self  statusChangeForBadge:mObj];
 }
 
@@ -301,7 +309,7 @@ NS_ASSUME_NONNULL_BEGIN
         }
     }];
         
-    if (badge.parent)  [self statusChangeForBadge:badge.parent];
+    if (badge.parent) [self statusChangeForBadge:badge.parent];
 }
 
 #pragma mark - Badge Status
