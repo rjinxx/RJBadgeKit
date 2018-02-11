@@ -281,11 +281,11 @@ NS_ASSUME_NONNULL_BEGIN
     
     if ([path isEqualToString:RJBadgeRootPath]) return;
     
-    // pthread_mutex_lock(&_mutex);
+    pthread_mutex_lock(&_mutex);
 
     NSMutableSet *infos = [[_objectInfosMap objectForKey:path] copy];
     
-    // pthread_mutex_unlock(&_mutex);
+    pthread_mutex_unlock(&_mutex);
 
     [infos enumerateObjectsUsingBlock:^(RJBadgeInfo *bInfo, BOOL * _Nonnull stop) {
         id<RJBadgeView> badgeView = bInfo.badgeView;
