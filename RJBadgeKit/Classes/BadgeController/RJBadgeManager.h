@@ -42,6 +42,8 @@ extern NSString * const RJBadgeNameKey;
 
 #pragma mark - Operation
 
+- (void)refreshBadgeWithInfos:(NSHashTable<RJBadgeInfo *> *)infos;
+
 - (void)setBadgeForKeyPath:(NSString *)keyPath;
 - (void)setBadgeForKeyPath:(NSString *)keyPath count:(NSUInteger)count;
 

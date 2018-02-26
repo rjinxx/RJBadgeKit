@@ -68,6 +68,13 @@ typedef void (^RJBadgeNotificationBlock)(id _Nullable observer, NSDictionary<NSS
 
 #pragma mark - Operation
 
+/**
+ refresh all badge views associated with current -observer,
+ aim to deal with situations / issue linked to auto-layout,
+ e.g. set 'setBadgeForKeyPath' when layout hasn't done yet.
+ */
+- (void)refreshBadgeView;
+
 + (void)setBadgeForKeyPath:(NSString *)keyPath;
 + (void)setBadgeForKeyPath:(NSString *)keyPath count:(NSUInteger)count;
 

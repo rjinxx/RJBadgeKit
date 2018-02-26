@@ -178,6 +178,10 @@
 
 #pragma mark - Operation
 
+- (void)refreshBadgeView {
+    [[RJBadgeManager sharedManager] refreshBadgeWithInfos:_infos];
+}
+
 + (void)setBadgeForKeyPath:(NSString *)keyPath
 {
     if (![keyPath length]) return;

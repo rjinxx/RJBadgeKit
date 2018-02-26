@@ -28,7 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign, nonatomic) BOOL needShow; // red dot
 
+// immediate children of current badge
 @property (strong, nonatomic, readonly) NSMutableArray<id<RJBadge>> *children;
+// all linked children, including children's children
+@property (strong, nonatomic, readonly) NSMutableArray<id<RJBadge>> *allLinkChildren;
 
 @property (weak, nonatomic) id<RJBadge> parent;
 
@@ -43,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addChild:(id<RJBadge>)child;     // add leaf
 - (void)removeChild:(id<RJBadge>)child;  // cut leaf
-- (void)removeAllChildren;               // clearAll
+- (void)clearAllChildren;                // clearAll
 
 - (void)removeFromParent; // [parent removeChild:self]
 

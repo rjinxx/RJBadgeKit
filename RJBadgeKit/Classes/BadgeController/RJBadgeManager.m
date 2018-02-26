@@ -13,22 +13,17 @@
 #import "UIView+RJBadge.h"
 #import "RJBadgeController.h"
 
-#ifndef dispatch_main_sync_rjbk
-#define dispatch_main_sync_rjbk(block) \
-    if ([NSThread isMainThread]) { \
+#ifndef dispatch_queue_async_rjbk
+#define dispatch_queue_async_rjbk(queue, block)\
+    if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(queue)) == 0) { \
         block(); \
     } else { \
-        dispatch_sync(dispatch_get_main_queue(), block); \
+        dispatch_async(queue, block); \
     }
 #endif
 
 #ifndef dispatch_main_async_rjbk
-#define dispatch_main_async_rjbk(block) \
-    if ([NSThread isMainThread]) { \
-        block(); \
-    } else { \
-        dispatch_async(dispatch_get_main_queue(), block); \
-    }
+#define dispatch_main_async_rjbk(block) dispatch_queue_async_rjbk(dispatch_get_main_queue(), block)
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
@@ -104,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
     // case where need to show badge while adding the observer
     id<RJBadge> badge = [self badgeForKeyPath:keyPath];
     if (badge && [badge needShow]) {
-        [self statusChangeForBadge:badge];
+        [self statusChangeForBadges:@[badge]];
     }
 }
 
@@ -113,7 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)unobserveWithInfo:(nullable RJBadgeInfo *)info
 {
     if (nil == info) return;
-
+    
     pthread_mutex_lock(&_mutex);
     
     NSString *keyPath = info.keyPath;
@@ -123,12 +118,9 @@ NS_ASSUME_NONNULL_BEGIN
     
     // lookup registered info instance
     RJBadgeInfo *registeredInfo = [infos member:info];
+    id<RJBadgeView> badgeView   = registeredInfo.badgeView;
     
     if (nil != registeredInfo) {
-        id<RJBadgeView> badgeView = registeredInfo.badgeView;
-        if (badgeView && [badgeView conformsToProtocol:@protocol(RJBadgeView)]) {
-            dispatch_main_sync_rjbk(^{ [badgeView hideBadge]; });
-        }
         [infos removeObject:registeredInfo];
         
         // remove no longer used infos
@@ -139,6 +131,10 @@ NS_ASSUME_NONNULL_BEGIN
     
     // unlock
     pthread_mutex_unlock(&_mutex);
+    
+    if (badgeView && [badgeView conformsToProtocol:@protocol(RJBadgeView)]) {
+        dispatch_main_async_rjbk(^{ [badgeView hideBadge]; });
+    }
 }
 
 - (void)unobserveWithInfos:(nullable NSHashTable<RJBadgeInfo *> *)infos
@@ -153,7 +149,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Setup Badge
 - (void)setupRootBadge
 {
-    NSString      *badgeFile   = [NSString badgeJSONPath];
+    NSString     *badgeFile    = [NSString badgeJSONPath];
     NSDictionary *badgeFileDic = [NSDictionary dictionaryWithContentsOfFile:badgeFile];
     NSDictionary *badgeDic     = badgeFileDic ? : @{RJBadgeNameKey : @"root",
                                                     RJBadgePathKey : @"root",
@@ -178,8 +174,8 @@ NS_ASSUME_NONNULL_BEGIN
 {
     if (!keyPath) return;
     
-    NSArray *keyPathArray = [keyPath componentsSeparatedByString:@"."];
-    id<RJBadge> mObj      = nil;
+    NSArray *keyPathArray        = [keyPath componentsSeparatedByString:@"."];
+    NSMutableArray *notifyBadges = [NSMutableArray array];
 
     pthread_mutex_lock(&_mutex);
 
@@ -196,27 +192,26 @@ NS_ASSUME_NONNULL_BEGIN
         NSString *namePath   = [NSString stringWithFormat:@".%@",name];
         NSString *subKeyPath = [bParent.keyPath stringByAppendingString:namePath];
         if (!objFind) {
-            BOOL set         = ([name isEqualToString:[keyPathArray lastObject]]);
-            objFind = [RJBadgeModel initWithDictionary:@{RJBadgeNameKey : name,
-                                                         RJBadgePathKey : subKeyPath,
-                                                         RJBadgeCountKey: @(0),
-                                                         RJBadgeShowKey : @(set)}];
+            BOOL set = ([name isEqualToString:[keyPathArray lastObject]]);
+            objFind  = [RJBadgeModel initWithDictionary:@{RJBadgeNameKey : name,
+                                                          RJBadgePathKey : subKeyPath,
+                                                          RJBadgeCountKey: @(0),
+                                                          RJBadgeShowKey : @(set)}];
             objFind.parent   = bParent;
             [bParent addChild:objFind];
         }
         bParent              = objFind;
-        
         if ([subKeyPath isEqualToString:keyPath]) {
-            objFind.needShow  = YES;
-            objFind.count     = count;
-            mObj = [(id)objFind copy];
+            objFind.needShow = YES;
+            objFind.count    = count;
         }
+        [notifyBadges addObject:objFind];
     }
     [self saveBadgeInfo];
     
     pthread_mutex_unlock(&_mutex);
-
-    [self statusChangeForBadge:mObj];
+    
+    [self statusChangeForBadges:[notifyBadges mutableCopy]];
 }
 
 #pragma mark - Clear Badge
@@ -228,8 +223,8 @@ NS_ASSUME_NONNULL_BEGIN
 {
     if (!keyPath) return;
     
-    NSArray *keyPathArray = [keyPath componentsSeparatedByString:@"."];
-    id<RJBadge> mObj      = nil;
+    NSArray *keyPathArray        = [keyPath componentsSeparatedByString:@"."];
+    NSMutableArray *notifyBadges = [NSMutableArray array];
 
     pthread_mutex_lock(&_mutex);
     
@@ -249,45 +244,72 @@ NS_ASSUME_NONNULL_BEGIN
             return;
         }
         if ([name isEqualToString:[keyPathArray lastObject]]) {
-            objFind.needShow  = NO;
+            objFind.needShow = NO;
             if ([objFind.children count] == 0 || forced) {
-                if (forced) {
-                    [objFind removeAllChildren];
+                if ([objFind.children count]  && forced) {
+                    NSArray *bs = [objFind.allLinkChildren mutableCopy];
+                    [notifyBadges addObjectsFromArray:bs];
+                    [objFind clearAllChildren];
                 }
                 objFind.count = 0;
-                [objFind.parent removeChild:objFind];
-                mObj  = [(id)objFind copy];
-                [objFind removeFromParent]; // after
+                [objFind removeFromParent];
             }
             [self saveBadgeInfo];
         }
+        [notifyBadges addObject:objFind];
     }
     pthread_mutex_unlock(&_mutex);
-    // to do..notify child who's parent has been removed
-    /**
-     * if ([mObj.children count] && forced) {
-     *     for (id<P365Badge> cObj in mObj.children) {
-     *         [self clearBadgeForKeyPath:cObj.keyPath];
-     *     }
-     * }
-     */
-    [self  statusChangeForBadge:mObj];
+    
+    [self  statusChangeForBadges:[notifyBadges mutableCopy]];
 }
 
 #pragma mark - Status Change
-- (void)statusChangeForBadge:(id<RJBadge>)badge
+- (void)statusChangeForBadges:(NSArray<id<RJBadge>> *)badges
 {
-    NSString *path = badge.keyPath;
+    if (![badges count]) return;
     
-    if ([path isEqualToString:RJBadgeRootPath]) return;
-    
-    pthread_mutex_lock(&_mutex);
+    for (id<RJBadge> badge in badges) {
+        NSString *path = badge.keyPath;
+        
+        if ([path isEqualToString:RJBadgeRootPath]) continue;
+        
+        pthread_mutex_lock(&_mutex);
+        
+        NSMutableSet *infos = [[_objectInfosMap objectForKey:path] copy];
+        
+        pthread_mutex_unlock(&_mutex);
+        
+        [infos enumerateObjectsUsingBlock:^(RJBadgeInfo *bInfo, BOOL * _Nonnull stop) {
+            id<RJBadgeView> badgeView = bInfo.badgeView;
+            if (badgeView && [badgeView conformsToProtocol:@protocol(RJBadgeView)]) {
+                NSUInteger c = badge.count;
+                dispatch_main_async_rjbk(^{
+                    if (c > 0) {
+                        [badgeView showBadgeWithValue:c];
+                    } else if (badge.needShow) {
+                        [badgeView showBadge];
+                    } else {
+                        [badgeView hideBadge];
+                    }
+                });
+            }
+            if (bInfo.block) {
+                id observer = bInfo.controller.observer;
+                bInfo.block(observer, @{ RJBadgePathKey :   badge.keyPath,
+                                         RJBadgeShowKey : @(badge.needShow),
+                                         RJBadgeCountKey: @(badge.count) });
+            }
+        }];
+    }
+}
 
-    NSMutableSet *infos = [[_objectInfosMap objectForKey:path] copy];
+#pragma mark - Refresh Badge
+- (void)refreshBadgeWithInfos:(NSHashTable<RJBadgeInfo *> *)infos
+{
+    if (0 == infos.count) return;
     
-    pthread_mutex_unlock(&_mutex);
-
-    [infos enumerateObjectsUsingBlock:^(RJBadgeInfo *bInfo, BOOL * _Nonnull stop) {
+    for (RJBadgeInfo *bInfo in infos) {
+        id<RJBadge> badge         = [self badgeForKeyPath:bInfo.keyPath];
         id<RJBadgeView> badgeView = bInfo.badgeView;
         if (badgeView && [badgeView conformsToProtocol:@protocol(RJBadgeView)]) {
             NSUInteger c = badge.count;
@@ -301,15 +323,7 @@ NS_ASSUME_NONNULL_BEGIN
                 }
             });
         }
-        if (bInfo.block) {
-            id observer = bInfo.controller.observer;
-            bInfo.block(observer, @{ RJBadgePathKey :   badge.keyPath,
-                                     RJBadgeShowKey : @(badge.needShow),
-                                     RJBadgeCountKey: @(badge.count) });
-        }
-    }];
-        
-    if (badge.parent) [self statusChangeForBadge:badge.parent];
+    }
 }
 
 #pragma mark - Badge Status

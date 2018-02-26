@@ -59,18 +59,43 @@ NSString * const RJBadgeCountKey    = @"RJBadgeCountKey";
 {
     RJBadgeModel *model = [[[self class] alloc] init];
     
-    model.name            = self.name;
-    model.keyPath         = self.keyPath;
-    model.count           = self.count;
-    model.needShow        = self.needShow;
-    model.parent          = self.parent;
-    model.children        = self.children;
+    model.name     = self.name;
+    model.keyPath  = self.keyPath;
+    model.count    = self.count;
+    model.needShow = self.needShow;
+    model.parent   = self.parent;
+    model.children = [self.children mutableCopy];
 
     return model;
 }
 
 - (void)dealloc {
     pthread_mutex_destroy(&_lock);
+}
+
+- (NSString *)debugDescription
+{
+    NSMutableString *s = [NSMutableString stringWithFormat:@"<%@:%p keyPath:%@", NSStringFromClass([self class]),
+                          self, _keyPath];
+    [s appendFormat:@" count:%@", [@(_count) stringValue]];
+    [s appendFormat:@" needShow:%@", [@(_needShow) stringValue]];
+    
+    if (NULL != _name) {
+        [s appendFormat:@" name:%@", _name];
+    }
+    if (NULL != _parent) {
+        [s appendFormat:@" parent.path:%@", _parent.keyPath];
+    }
+    if ([_children count]) {
+        NSMutableArray *subPaths = [NSMutableArray array];
+        for (RJBadgeModel *child in _children) {
+            [subPaths addObject:child.keyPath];
+        }
+        [s appendFormat:@" children.path:%@", subPaths];
+    }
+    [s appendString:@">"];
+    
+    return s;
 }
 
 #pragma mark - RJBadge
@@ -105,7 +130,7 @@ NSString * const RJBadgeCountKey    = @"RJBadgeCountKey";
     pthread_mutex_unlock(&_lock);
 }
 
-- (void)removeAllChildren;
+- (void)clearAllChildren;
 {
     pthread_mutex_lock(&_lock);
     
@@ -118,6 +143,7 @@ NSString * const RJBadgeCountKey    = @"RJBadgeCountKey";
     for (id<RJBadge> child in children) {
         child.needShow = NO;
         child.count    = 0;
+        [child clearAllChildren];
     }
 }
 
@@ -174,6 +200,20 @@ NSString * const RJBadgeCountKey    = @"RJBadgeCountKey";
         _count = subCount;
     }
     return _count;
+}
+
+- (NSMutableArray<id<RJBadge>> *)allLinkChildren
+{
+    NSMutableArray *links = [self.children mutableCopy];
+    
+    if ([self.children count]) {
+        [self.children enumerateObjectsUsingBlock:^(id<RJBadge> obj,
+                                                    NSUInteger  idx,
+                                                    BOOL       *stop) {
+            [links addObjectsFromArray:obj.allLinkChildren];
+        }];
+    }
+    return links;
 }
 
 @end

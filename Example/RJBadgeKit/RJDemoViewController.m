@@ -9,6 +9,8 @@
 #import "RJDemoViewController.h"
 #import "RJBadgeKit.h"
 
+NSString * const RJMarkPath = @"root.mark";
+
 @interface RJDemoViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *pageButton;
@@ -26,6 +28,40 @@
     [RJBadgeController setBadgeForKeyPath:demoPath];
     
     [self.badgeController observePath:demoPath badgeView:self.pageButton block:nil];
+    
+    UIButton *mark   = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 12.0f, 25, 25.f)];
+    mark.badgeOffset = CGPointMake(-2, 6);
+    
+    [RJBadgeController setBadgeForKeyPath:RJMarkPath];
+    
+    [self.badgeController observePath:RJMarkPath badgeView:mark block:nil];
+    
+    [mark setTitle:@"Mark" forState:UIControlStateNormal];
+    [mark setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [mark addTarget:self action:@selector(markAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:mark];
+    self.navigationItem.rightBarButtonItem = barItem;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    /**
+     @note Example for refresh badge display of -'mark' button on navigation bar,
+     which may not appear at first due to autolayout procedure of navigation items.
+     */
+    [self.badgeController refreshBadgeView];
+}
+
+- (void)markAction:(UIButton *)sender
+{
+    BOOL needShow = [RJBadgeController statusForKeyPath:RJMarkPath];
+    if (needShow) {
+        [RJBadgeController clearBadgeForKeyPath:RJMarkPath];
+    } else {
+        [RJBadgeController setBadgeForKeyPath:RJMarkPath];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
