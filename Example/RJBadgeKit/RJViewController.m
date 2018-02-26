@@ -93,7 +93,7 @@ NSString * const DEMO_CHILD_PATH2 = @"root.p365.test2";
     }
 }
 
-- (IBAction)clickChildButton2:(id)sender
+- (IBAction)clickChildButton2:(UIButton *)sender
 {
     BOOL needShow = [RJBadgeController statusForKeyPath:DEMO_CHILD_PATH2];
     if (needShow) {
@@ -101,6 +101,10 @@ NSString * const DEMO_CHILD_PATH2 = @"root.p365.test2";
     } else {
         [RJBadgeController setBadgeForKeyPath:DEMO_CHILD_PATH2 count:2];
     }
+}
+
+- (IBAction)clickParentButton:(UIButton *)sender {
+    [RJBadgeController clearBadgeForKeyPath:DEMO_PARENT_PATH forced:YES];
 }
 
 #pragma mark - UITextFieldDelegate

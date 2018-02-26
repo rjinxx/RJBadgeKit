@@ -83,6 +83,9 @@
                                     <constraint firstAttribute="height" constant="35" id="YQu-lS-wEA"/>
                                 </constraints>
                                 <state key="normal" title="root.p365"/>
+                                <connections>
+                                    <action selector="clickParentButton:" destination="whP-gf-Uak" eventType="touchUpInside" id="q82-kQ-SWK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFj-Nr-lWx">
                                 <rect key="frame" x="53" y="459" width="105" height="35"/>
