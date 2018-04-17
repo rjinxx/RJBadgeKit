@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RJBadgeKit'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'Red dot (version/message reminder) display and its management.'
 
 # This description is used to generate tags and improve search results.

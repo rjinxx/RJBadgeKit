@@ -1,5 +1,5 @@
 PODS:
-  - RJBadgeKit (0.1.0)
+  - RJBadgeKit (0.2.1)
 
 DEPENDENCIES:
   - RJBadgeKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  RJBadgeKit: f8cf45a6be913e2f8ef8593538187866985c082c
+  RJBadgeKit: db6f8f09f92f92e2473142aa4fee46121de6d716
 
 PODFILE CHECKSUM: 2fb6b623b87aeb174cd13a4c34101b548b391a79
 

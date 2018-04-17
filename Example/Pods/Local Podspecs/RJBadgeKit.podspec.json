@@ -1,19 +1,19 @@
 {
   "name": "RJBadgeKit",
-  "version": "0.1.0",
-  "summary": "A short description of RJBadgeKit.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.2.1",
+  "summary": "Red dot (version/message reminder) display and its management.",
+  "description": "A complete and lightweight solution for red dot (version/message reminder) display and its management.",
   "homepage": "https://github.com/RylanJIN/RJBadgeKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "RylanJIN": "xiaojun.jin@outlook.com"
+    "Ryan Jin": "xiaojun.jin@outlook.com"
   },
   "source": {
     "git": "https://github.com/RylanJIN/RJBadgeKit.git",
-    "tag": "0.1.0"
+    "tag": "0.2.1"
   },
   "platforms": {
     "ios": "8.0"

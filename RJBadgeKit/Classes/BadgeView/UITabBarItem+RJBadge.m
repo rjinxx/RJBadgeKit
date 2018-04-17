@@ -90,4 +90,12 @@
     [[self badgeView] setBadgeOffset:badgeOffset];
 }
 
+- (UIColor *)badgeBgColor {
+    return [[self badgeView] badgeBgColor];
+}
+
+- (void)setBadgeBgColor:(UIColor *)badgeBgColor {
+    [[self badgeView] setBadgeBgColor:badgeBgColor];
+}
+
 @end
