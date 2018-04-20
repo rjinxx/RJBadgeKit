@@ -20,7 +20,7 @@
 @property (nonatomic, strong) UIFont  *badgeFont;      // default bold size 9
 @property (nonatomic, strong) UIColor *badgeTextColor; // default white color
 @property (nonatomic, strong) UIColor *badgeBgColor;
-@property (nonatomic, assign) CGFloat  badgeRadius;
+@property (nonatomic, assign) CGFloat  badgeRadius;    // for red dot mode
 @property (nonatomic, assign) CGPoint  badgeOffset;    // offset from right-top
 
 - (void)showBadge; // badge with red dot

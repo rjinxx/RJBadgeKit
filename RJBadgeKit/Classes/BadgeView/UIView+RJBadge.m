@@ -23,16 +23,14 @@ static const CGFloat kRJBadgeDefaultRadius = 3.f;
         self.customView.hidden = NO;
         self.badge.hidden      = YES;
     } else {        
-        CGFloat width = kRJBadgeDefaultRadius * 2;
+        CGFloat width = (self.badgeRadius ?: kRJBadgeDefaultRadius) * 2;
         CGRect rect   = CGRectMake(CGRectGetWidth(self.frame), -width, width, width);
         
-        self.badge.frame  = rect;
-        self.badge.text   = @"";
-        self.badge.hidden = NO;
-        
-        if (self.badgeRadius == 0) {
-            self.badge.layer.cornerRadius = CGRectGetWidth(self.badge.frame) / 2;
-        }
+        self.badge.frame              = rect;
+        self.badge.text               = @"";
+        self.badge.hidden             = NO;
+        self.badge.layer.cornerRadius = width / 2;
+
         CGFloat offsetX   = CGRectGetWidth(self.frame) + 2 + self.badgeOffset.x;
         self.badge.center = CGPointMake(offsetX, self.badgeOffset.y);
     }
@@ -54,15 +52,13 @@ static const CGFloat kRJBadgeDefaultRadius = 3.f;
     frame.size.height += 4;
     
     if(CGRectGetWidth(frame) < CGRectGetHeight(frame)) {
-        frame.size.width = CGRectGetHeight(frame);
+        frame.size.width     = CGRectGetHeight(frame);
     }
     self.badge.frame  = frame;
     CGFloat offsetX   = CGRectGetWidth(self.frame) + 2 + self.badgeOffset.x;
     self.badge.center = CGPointMake(offsetX, self.badgeOffset.y);
     
-    if (self.badgeRadius == 0) {
-        self.badge.layer.cornerRadius = CGRectGetHeight(self.badge.frame) / 2;
-    }
+    self.badge.layer.cornerRadius = CGRectGetHeight(self.badge.frame) / 2.f;
 }
 
 - (void)hideBadge
@@ -187,13 +183,11 @@ static const CGFloat kRJBadgeDefaultRadius = 3.f;
     return [objc_getAssociatedObject(self, _cmd) floatValue];
 }
 
-- (void)setBadgeRadius:(CGFloat)badgeRadius
-{
+- (void)setBadgeRadius:(CGFloat)badgeRadius {
     objc_setAssociatedObject(self,
                              @selector(badgeRadius),
                              @(badgeRadius),
                              OBJC_ASSOCIATION_RETAIN);
-    self.badge.layer.cornerRadius = badgeRadius;
 }
 
 - (CGPoint)badgeOffset

@@ -35,8 +35,8 @@ NSString * const DEMO_CHILD_PATH2 = @"root.p365.test2";
     
     [self.pathLabel setText:DEMO_CHILD_PATH1];
     
-    // self.parentButton.badgeRadius = 5;
     // self.parentButton.badgeOffset = CGPointMake(-50, 0);
+    self.parentButton.badgeRadius    = 5.f;
     self.parentButton.badgeBgColor   = [UIColor blueColor];
 
     // observe parent button 'root.p365'
