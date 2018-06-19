@@ -31,7 +31,7 @@
 
 @optional
 
-@property (nonatomic, strong) UIView  *customView;
+@property (nonatomic, strong) UIView  *badgeCustomView;
 /**
  convenient interface:
  create 'cusomView' (UIImageView) using badgeImage
