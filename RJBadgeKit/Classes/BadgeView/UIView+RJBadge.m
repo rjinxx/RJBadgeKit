@@ -242,10 +242,11 @@ static const CGFloat kRJBadgeDefaultRadius = 3.f;
         bound.origin.y = -bound.size.height;
         
         self.badgeCustomView.frame     = bound;
+        self.badgeCustomView.hidden    = YES;
         // CGFloat offsetX             = CGRectGetWidth(self.frame) + 2 + self.badgeOffset.x;
         // self.badgeCustomView.center = CGPointMake(offsetX, self.badgeOffset.y);
     }
-    [self showBadge]; // refresh - in case of setting custom view after show badge
+    // [self showBadge]; // refresh - in case of setting custom view after show badge
 }
 
 @end
