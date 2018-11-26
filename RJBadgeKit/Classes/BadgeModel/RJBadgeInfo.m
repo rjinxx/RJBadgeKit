@@ -7,7 +7,19 @@
 
 #import "RJBadgeInfo.h"
 
-@implementation RJBadgeInfo
+@interface RJBadgeInfo ()
+
+@property (nonatomic,   copy) NSString                 *keyPath;
+@property (nonatomic,   weak) RJBadgeController        *controller;
+@property (nonatomic,   copy) RJBadgeNotificationBlock block;
+
+@property (nonatomic, strong) id<RJBadgeView>          badgeView;
+
+@end
+
+@implementation RJBadgeInfo {
+    NSUInteger _badgeHash;
+}
 
 #pragma mark - Initialize
 
@@ -19,10 +31,12 @@
 {
     self = [super init];
     if (self) {
-        _controller = controller;
-        _badgeView  = badgeView;
-        _block      = block;
-        _keyPath    = keyPath;
+        self.controller = controller;
+        self.keyPath    = keyPath;
+        self.badgeView  = badgeView;
+        self.block      = block;
+
+        _badgeHash      = self.keyPath.hash ^ self.controller.hash;
     }
     return self;
 }
@@ -46,7 +60,8 @@
 #pragma mark - Properties
 
 - (NSUInteger)hash {
-    return [_keyPath hash] ^ [_controller hash];
+    // hash must be consistent during the object's life time
+    return _badgeHash/* [_keyPath hash] ^ [_controller hash] */;
 }
 
 - (BOOL)isEqual:(id)object

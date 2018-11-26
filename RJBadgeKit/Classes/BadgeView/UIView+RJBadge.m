@@ -214,11 +214,16 @@ static const CGFloat kRJBadgeDefaultRadius = 3.f;
 
 - (void)setBadgeImage:(UIImage *)badgeImage
 {
-    self.badgeCustomView = [[UIImageView alloc] initWithImage:badgeImage];
-    objc_setAssociatedObject(self,
-                             @selector(badgeImage),
-                             badgeImage,
-                             OBJC_ASSOCIATION_RETAIN);
+    if (!badgeImage) {
+        [self.badgeCustomView removeFromSuperview];
+        [self setBadgeCustomView:nil];
+    } else {
+        self.badgeCustomView = [[UIImageView alloc] initWithImage:badgeImage];
+        objc_setAssociatedObject(self,
+                                 @selector(badgeImage),
+                                 badgeImage,
+                                 OBJC_ASSOCIATION_RETAIN);
+    }
 }
 
 - (UIView *)badgeCustomView {

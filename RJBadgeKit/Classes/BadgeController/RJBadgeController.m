@@ -10,6 +10,12 @@
 #import <pthread/pthread.h>
 #import "RJBadgeManager.h"
 
+@interface RJBadgeController ()
+
+@property (nullable, nonatomic, weak) id observer;
+
+@end
+
 @implementation RJBadgeController {
     NSHashTable<RJBadgeInfo *> *_infos;
     pthread_mutex_t             _lock;
@@ -21,11 +27,11 @@
 {
     self = [super init];
     if (self) {
-        _observer = observer;
-        _infos    = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsStrongMemory |
-                                                         NSPointerFunctionsObjectPersonality
-                                                capacity:0];
+        _infos = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsStrongMemory |
+                                                      NSPointerFunctionsObjectPersonality
+                                             capacity:0];
         pthread_mutex_init(&_lock, NULL);
+        self.observer         = observer;
     }
     return self;
 }
